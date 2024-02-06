@@ -8,6 +8,8 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 #endregion
 public class Bootstrapper : MonoBehaviour
 {
@@ -39,6 +41,8 @@ public class Bootstrapper : MonoBehaviour
 
     #region Normal variables
     private int _clickPower;
+
+    private Controlasset _controlAsset;
     #endregion
 
     #region Object variables
@@ -59,6 +63,8 @@ public class Bootstrapper : MonoBehaviour
 
         #region Normal realization
         _clickPower = 1;
+
+        _controlAsset = new Controlasset();
         #endregion
 
         #region Object realization
@@ -67,13 +73,14 @@ public class Bootstrapper : MonoBehaviour
         #endregion
 
         #region Play music
-        audioSource.loop = false;
         audioSource.clip = GetRandomClip();
         audioSource.Play();
         #endregion
 
         #region Invoke events
         Invoke(nameof(EventOnEnd), audioSource.clip.length);
+
+        _controlAsset.Clicker.Enable();
         #endregion
 
         #region Start coroutines
