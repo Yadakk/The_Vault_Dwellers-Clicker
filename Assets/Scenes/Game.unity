@@ -5405,7 +5405,6 @@ GameObject:
   - component: {fileID: 1808833320}
   - component: {fileID: 1808833327}
   - component: {fileID: 1808833329}
-  - component: {fileID: 1808833328}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -5501,23 +5500,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monthDuration: 20
+  IsRadio: 0
   resourcesLabel: {fileID: 347825888}
   essentialsLabel: {fileID: 1674887132}
   peopleLabel: {fileID: 1416251738}
   yearLabel: {fileID: 953602186}
   timeLabel: {fileID: 929738071}
---- !u!114 &1808833328
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1808833319}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46d07c088645cd44dadf48a68d692ea4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  audioSource: {fileID: 1808833329}
   AmbienceClips:
   - {fileID: 8300000, guid: a442c629026bb4245b0fb78dec445524, type: 3}
   - {fileID: 8300000, guid: 69c7715ae170e7d4199d9e4f0638984c, type: 3}
@@ -5530,8 +5519,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: fb3c79a56e386624cbbe632d79e315f8, type: 3}
   - {fileID: 8300000, guid: 7bafcad17aff6084ca893835076c3ae1, type: 3}
   - {fileID: 8300000, guid: fb0ba4f9b52c83246b9bb7f5ad7f4d39, type: 3}
-  IsRadio: 0
-  audioSource: {fileID: 1808833329}
 --- !u!82 &1808833329
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5543,7 +5530,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

@@ -13,13 +13,19 @@ public class Bootstrapper : MonoBehaviour
 {
     #region Serialized variables
     [SerializeField] private int monthDuration;
-                
+
+    [SerializeField] private bool IsRadio;
+
     [SerializeField] private TextMeshProUGUI resourcesLabel;
     [SerializeField] private TextMeshProUGUI essentialsLabel;
     [SerializeField] private TextMeshProUGUI peopleLabel;
 
     [SerializeField] private TextMeshProUGUI yearLabel;
     [SerializeField] private TextMeshProUGUI timeLabel;
+
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip[] AmbienceClips;
+    [SerializeField] private AudioClip[] RadioClips;
     #endregion
 
     #region Serialized to static variables
@@ -60,15 +66,44 @@ public class Bootstrapper : MonoBehaviour
         _timeObject = new TimeBank();
         #endregion
 
+        #region Play music
+        audioSource.loop = false;
+        audioSource.clip = GetRandomClip();
+        audioSource.Play();
+        #endregion
+
+        #region Invoke events
+        Invoke(nameof(EventOnEnd), audioSource.clip.length);
+        #endregion
+
         #region Start coroutines
         StartCoroutine(TimeCoroutine());
         #endregion
     }
+    #region Normal functions
+    private AudioClip GetRandomClip()
+    {
+        if (IsRadio)
+        {
+            return RadioClips[UnityEngine.Random.Range(0, RadioClips.Length)];
+        }
+        else
+        {
+            return AmbienceClips[UnityEngine.Random.Range(0, AmbienceClips.Length)];
+        }
+    }
+    #endregion
 
     #region Events
     public void OnButtonClick()
     {
         _resourceObject.Resources += _clickPower;
+    }
+
+    void EventOnEnd()
+    {
+        audioSource.clip = GetRandomClip();
+        audioSource.Play();
     }
     #endregion
 
