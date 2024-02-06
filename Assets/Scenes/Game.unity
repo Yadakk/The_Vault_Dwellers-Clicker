@@ -1126,7 +1126,7 @@ GameObject:
   - component: {fileID: 367255523}
   - component: {fileID: 367255525}
   m_Layer: 5
-  m_Name: Timer
+  m_Name: TimeDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5504,7 +5504,6 @@ MonoBehaviour:
   peopleLabel: {fileID: 1416251738}
   yearLabel: {fileID: 953602186}
   timeLabel: {fileID: 929738071}
-  resourceButton: {fileID: 54697654}
 --- !u!1 &1850345237
 GameObject:
   m_ObjectHideFlags: 0
