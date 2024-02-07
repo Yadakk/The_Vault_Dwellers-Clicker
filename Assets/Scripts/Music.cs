@@ -34,4 +34,11 @@ public class Music : MonoBehaviour
 
         Invoke(nameof(EventOnEnd), _musicData.AudioSource.clip.length);
     }
+
+    public void OnMute()
+    {
+        _musicData.IsMute = !_musicData.IsMute;
+
+        _musicData.AudioSource.volume = _musicData.MuteUnmuteMusic();
+    }
 }

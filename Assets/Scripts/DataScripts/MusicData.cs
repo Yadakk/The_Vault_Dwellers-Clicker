@@ -5,6 +5,7 @@ using UnityEngine;
 public class MusicData : MonoBehaviour
 {
     [SerializeField] private bool _isRadio;
+    [SerializeField] private bool _isMute;
 
     [SerializeField] private AudioClip[] _ambience;
     [SerializeField] private AudioClip[] _radio;
@@ -15,6 +16,11 @@ public class MusicData : MonoBehaviour
     {
         get => _isRadio;
         set => _isRadio = value;
+    }
+    public bool IsMute
+    {
+        get => _isMute; 
+        set => _isMute = value;
     }
 
     public AudioSource AudioSource
@@ -32,6 +38,17 @@ public class MusicData : MonoBehaviour
         else
         {
             return _ambience[Random.Range(0, _ambience.Length)];
+        }
+    }
+    public int MuteUnmuteMusic()
+    {
+        if (_isMute)
+        {
+            return 0;
+        }
+        else
+        {
+            return 1;
         }
     }
 }
