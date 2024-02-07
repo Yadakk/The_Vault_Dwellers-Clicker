@@ -4,6 +4,7 @@ using TMPro;
 using UnityEditor;
 using UnityEditor.Search;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GuiData : MonoBehaviour
 {
@@ -13,6 +14,11 @@ public class GuiData : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI _year;
     [SerializeField] private TextMeshProUGUI _month;
+
+    [SerializeField] private TextMeshProUGUI _name;
+    [SerializeField] private TextMeshProUGUI _description;
+    [SerializeField] private Image _image;
+    [SerializeField] private TextMeshProUGUI _cost;
     public TextMeshProUGUI Resources 
     { 
         get => _resources; 
@@ -41,5 +47,29 @@ public class GuiData : MonoBehaviour
     {
         get => _month;
         set => _month = value;
+    }
+
+    public TextMeshProUGUI Name
+    {
+        get => _name;
+        set => _name = value;
+    }
+
+    public TextMeshProUGUI Description
+    {
+        get => _description;
+        set => _description = value;
+    }
+
+    public Image Image
+    {
+        get => _image;
+        set => _image = value;
+    }
+
+    public TextMeshProUGUI Cost
+    {
+        get => _cost;
+        set => _cost = value;
     }
 }
