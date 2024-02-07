@@ -10,6 +10,9 @@ public class SfxData : MonoBehaviour
     [SerializeField] private AudioClip _year;
     [SerializeField] private AudioClip _month;
 
+    [SerializeField] private AudioClip _guiOpen;
+    [SerializeField] private AudioClip _guiClose;
+
     [SerializeField] private AudioSource _audioSource;
 
     public AudioClip[] ButtonClips
@@ -34,6 +37,18 @@ public class SfxData : MonoBehaviour
     {
         get => _month;
         set => _month = value;
+    }
+
+    public AudioClip GuiOpen
+    {
+        get => _guiOpen;
+        set => _guiOpen = value;
+    }
+
+    public AudioClip GuiClose
+    {
+        get => _guiClose;
+        set => _guiClose = value;
     }
 
     public AudioClip GetButtonClips()
