@@ -17,6 +17,11 @@ public class Timer : MonoBehaviour
         StartCoroutine(TimeCoroutine());
     }
 
+    public void ContinueTimeCoroutine()
+    {
+        StartCoroutine(TimeCoroutine());
+    }
+
     private IEnumerator TimeCoroutine()
     {
         while (true)
