@@ -137,6 +137,7 @@ GameObject:
   - component: {fileID: 54697663}
   - component: {fileID: 54697661}
   - component: {fileID: 54697662}
+  - component: {fileID: 54697664}
   m_Layer: 5
   m_Name: ResourceButton
   m_TagString: Untagged
@@ -320,10 +321,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5d9355a867477c48a2e2e39dfd80652, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonImage: {fileID: 54697657}
   _resourceData: {fileID: 1774015008}
   _sfxData: {fileID: 1774015005}
   _clickerData: {fileID: 1774015010}
+--- !u!114 &54697664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 54697654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07956332aedbfa5408c712aa83a7ca14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonImage: {fileID: 54697657}
 --- !u!1 &128446514
 GameObject:
   m_ObjectHideFlags: 0
@@ -1711,6 +1724,7 @@ GameObject:
   - component: {fileID: 671004985}
   - component: {fileID: 671004984}
   - component: {fileID: 671004983}
+  - component: {fileID: 671004986}
   m_Layer: 5
   m_Name: RadioButton
   m_TagString: Untagged
@@ -1732,9 +1746,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1631493714}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 875.97, y: -451.16}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -100.03003, y: 79.84}
   m_SizeDelta: {x: 200, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &671004983
@@ -1831,6 +1845,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 671004981}
   m_CullTransparentMesh: 1
+--- !u!114 &671004986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 671004981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07956332aedbfa5408c712aa83a7ca14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonImage: {fileID: 671004984}
 --- !u!1 &678283671
 GameObject:
   m_ObjectHideFlags: 0
