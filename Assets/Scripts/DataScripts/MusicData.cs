@@ -11,6 +11,12 @@ public class MusicData : MonoBehaviour
 
     [SerializeField] private AudioSource _audioSource;
 
+    public bool IsRadio
+    {
+        get => _isRadio;
+        set => _isRadio = value;
+    }
+
     public AudioSource AudioSource
     {
         get => _audioSource;

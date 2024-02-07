@@ -22,4 +22,16 @@ public class Music : MonoBehaviour
 
         Invoke(nameof(EventOnEnd), _musicData.AudioSource.clip.length);
     }
+
+    public void OnRadioSwitch()
+    {
+        _musicData.IsRadio = !_musicData.IsRadio;
+
+        CancelInvoke();
+
+        _musicData.AudioSource.clip = _musicData.GetRandomMusic();
+        _musicData.AudioSource.Play();
+
+        Invoke(nameof(EventOnEnd), _musicData.AudioSource.clip.length);
+    }
 }
