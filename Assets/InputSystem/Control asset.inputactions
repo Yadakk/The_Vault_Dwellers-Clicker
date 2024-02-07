@@ -1,0 +1,12 @@
+{
+    "name": "Control asset",
+    "maps": [
+        {
+            "name": "Clicker",
+            "id": "6b13e41e-faf0-479e-a321-681ca1efce6a",
+            "actions": [],
+            "bindings": []
+        }
+    ],
+    "controlSchemes": []
+}
