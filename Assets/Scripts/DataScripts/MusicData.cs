@@ -16,21 +16,16 @@ public class MusicData : MonoBehaviour
         get => _audioSource;
         set => _audioSource = value;
     }
+
     public AudioClip GetRandomMusic()
     {
         if (_isRadio)
         {
-            return _radio[UnityEngine.Random.Range(0, _radio.Length)];
+            return _radio[Random.Range(0, _radio.Length)];
         }
         else
         {
-            return _ambience[UnityEngine.Random.Range(0, _ambience.Length)];
+            return _ambience[Random.Range(0, _ambience.Length)];
         }
-    }
-
-    public void EventOnEnd()
-    {
-        _audioSource.clip = GetRandomMusic();
-        _audioSource.PlayOneShot(_audioSource.clip);
     }
 }

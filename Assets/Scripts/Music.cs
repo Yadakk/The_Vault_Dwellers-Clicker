@@ -12,6 +12,14 @@ public class Music : MonoBehaviour
         _musicData.AudioSource.clip = _musicData.GetRandomMusic();
         _musicData.AudioSource.Play();
 
-        Invoke(nameof(_musicData.EventOnEnd), _musicData.AudioSource.clip.length);
+        Invoke(nameof(EventOnEnd), _musicData.AudioSource.clip.length);
+    }
+
+    public void EventOnEnd()
+    {
+        _musicData.AudioSource.clip = _musicData.GetRandomMusic();
+        _musicData.AudioSource.Play();
+
+        Invoke(nameof(EventOnEnd), _musicData.AudioSource.clip.length);
     }
 }
