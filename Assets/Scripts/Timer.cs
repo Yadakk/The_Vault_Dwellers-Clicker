@@ -1,33 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using TMPro;
 using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
-    [SerializeField] private int monthDuration;
+    [SerializeField] private int _monthDuration;
 
     [SerializeField] private AudioSource _audioSource;
 
     [SerializeField] private TimeData _timeData;
     [SerializeField] private SfxData _sfxData;
 
+    private float _timeRemaining;
+
     void Awake()
     {
-        StartCoroutine(TimeCoroutine());
+        _timeRemaining = _monthDuration;
     }
-
-    public void ContinueTimeCoroutine()
+    private void Update()
     {
-        StartCoroutine(TimeCoroutine());
-    }
-
-    private IEnumerator TimeCoroutine()
-    {
-        while (true)
+        if (_timeRemaining > 0)
         {
-            yield return new WaitForSeconds(monthDuration);
+            _timeRemaining -= Time.deltaTime;
+        }
+        else
+        {
             _timeData.Month += 1;
+
             _audioSource.clip = _sfxData.MonthClip;
 
             if (_timeData.Month > 12)
@@ -38,6 +39,8 @@ public class Timer : MonoBehaviour
             }
 
             _audioSource.PlayOneShot(_audioSource.clip);
+
+            _timeRemaining = _monthDuration;
         }
     }
 }
