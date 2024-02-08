@@ -9612,6 +9612,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ca4ff4e174551724881ba23d18f73922, type: 3}
   _year: {fileID: 8300000, guid: 48efcffae74881c499f14c759fec719a, type: 3}
   _month: {fileID: 8300000, guid: 70e555302b1db9b44a839edc112abbf4, type: 3}
+  _gameOver: {fileID: 8300000, guid: 4c0b0c554f21f894cacdb9fe2c77cbba, type: 3}
   _guiOpen: {fileID: 8300000, guid: 413896773c9c93a4ea05fa8fbf7be43d, type: 3}
   _guiClose: {fileID: 8300000, guid: eddf2095e0844324c81bba8346448b17, type: 3}
   _audioSource: {fileID: 1774015011}
