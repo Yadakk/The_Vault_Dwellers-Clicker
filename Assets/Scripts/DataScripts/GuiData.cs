@@ -21,6 +21,7 @@ public class GuiData : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _cost;
     [SerializeField] private TextMeshProUGUI _level;
     [SerializeField] private TextMeshProUGUI _power;
+    [SerializeField] private TextMeshProUGUI _buy;
 
     public TextMeshProUGUI Resources 
     { 
@@ -86,5 +87,11 @@ public class GuiData : MonoBehaviour
     {
         get => _power;
         set => _power = value;
+    }
+
+    public TextMeshProUGUI Buy
+    {
+        get => _buy;
+        set => _buy = value;
     }
 }
