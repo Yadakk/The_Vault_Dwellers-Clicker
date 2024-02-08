@@ -8,31 +8,11 @@ public class ItemData : MonoBehaviour
     [SerializeField] ItemData _itemData;
     [SerializeField] ResourceData _resourceData;
     [SerializeField] ClickerData _clickerData;
+    [SerializeField] GuiData _guiData;
+
     [SerializeField] GuiSfx _sfx;
 
-    private int _id;
-    private int _cost;
-    private int _level;
-
     private Item _item;
-
-    public int Id
-    {
-        get => _id;
-        set => _id = value;
-    }
-
-    public int Cost
-    {
-        get => _cost;
-        set => _cost = value;
-    }
-
-    public int Level
-    {
-        get => _level;
-        set => _level = value;
-    }
 
     public Item Item
     {
@@ -42,7 +22,7 @@ public class ItemData : MonoBehaviour
 
     public void Purchase()
     {
-        switch (_itemData.Id)
+        switch (_item.Id)
         {
             case 1:
                 RetrievalDeviceUpgrade();
@@ -54,13 +34,12 @@ public class ItemData : MonoBehaviour
     }
     private void RetrievalDeviceUpgrade()
     {
-        if (_resourceData.Resources >= _itemData.Cost && _itemData.Level < 6)
+        if (_resourceData.Resources >= _item.Cost && _item.Level <= _item.LevelCost.Length)
         {
-            _resourceData.Resources -= _itemData.Cost;
-            _item.Level += 1;
+            _resourceData.Resources -= _item.Cost;
             _sfx.OnButtonClick();
 
-            switch (_itemData.Level)
+            switch (_item.Level)
             {
                 case 1:
                     _clickerData.ClickPower += 1;
@@ -82,6 +61,16 @@ public class ItemData : MonoBehaviour
                     _clickerData.ClickPower += 4;
                     break;
             }
+            if (_item.Level < _item.LevelCost.Length)
+                _item.Cost = _item.LevelCost[_item.Level];
+            else
+            {
+                _guiData.Buy.text = "Sold out";
+                _guiData.Cost.text = $"Cost: -";
+                _item.Num.text = "-";
+            }
+
+            _item.Level += 1;
         }    
     }
 
