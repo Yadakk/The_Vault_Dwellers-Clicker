@@ -3897,7 +3897,7 @@ MonoBehaviour:
     (passive money generation). Every upgrade improves the amount of money you get
     and reduces the cooldown
   _id: 2
-  _levelCost: 01000000040000000a000000
+  _levelCost: e8030000a00f000010270000
   _levelEffect:
   - +1 passive income
   - +1 passive income, -1 sec. cooldown
@@ -11191,7 +11191,7 @@ MonoBehaviour:
   _description: Improves the efficency of the Retrieval Device (money generating
     button) by +X
   _id: 1
-  _levelCost: 0100000002000000030000000400000005000000
+  _levelCost: 6400000090010000e80300009808000088130000
   _levelEffect:
   - +1 click power
   - +2 click power
