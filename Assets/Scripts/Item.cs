@@ -18,13 +18,21 @@ public class Item : MonoBehaviour
     public int Level
     {
         get => _level;
-        set => _level = value;
+        set
+        {
+            _level = value;
+            _guiData.Level.text = $"Current level: {_level}";
+        }
     }
 
     public int Cost
     {
         get => _cost;
-        set => _cost = value;
+        set
+        {
+            _cost = value;
+            _guiData.Cost.text = $"Cost: {_cost}";
+        }
     }
 
     public void TransferInfo()
