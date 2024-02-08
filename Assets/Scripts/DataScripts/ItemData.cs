@@ -8,6 +8,9 @@ public class ItemData : MonoBehaviour
     [SerializeField] ItemData _itemData;
     [SerializeField] ResourceData _resourceData;
     [SerializeField] ClickerData _clickerData;
+    [SerializeField] GuiSfx _sfx;
+
+    [SerializeField] GameObject _window;
 
     private int _id;
     private int _cost;
@@ -57,6 +60,8 @@ public class ItemData : MonoBehaviour
         {
             _resourceData.Resources -= _itemData.Cost;
             _item.Level += 1;
+            _window.SetActive(false);
+            _sfx.OnButtonClick();
 
             switch (_itemData.Level)
             {

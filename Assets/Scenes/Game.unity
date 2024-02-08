@@ -5270,30 +5270,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 610502915}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1000847858}
-        m_TargetAssemblyTypeName: GuiSfx, Assembly-CSharp
-        m_MethodName: OnButtonClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1774015013}
         m_TargetAssemblyTypeName: ItemData, Assembly-CSharp
         m_MethodName: Purchase
@@ -9196,6 +9172,8 @@ MonoBehaviour:
   _itemData: {fileID: 1774015013}
   _resourceData: {fileID: 1774015008}
   _clickerData: {fileID: 1774015010}
+  _sfx: {fileID: 1000847858}
+  _window: {fileID: 610502915}
 --- !u!1 &1792359833
 GameObject:
   m_ObjectHideFlags: 0
