@@ -10,6 +10,7 @@ public class Item : MonoBehaviour
     [SerializeField] private string _description;
     [SerializeField] private int _id;
     [SerializeField] private int[] _levelCost;
+    [SerializeField] private string[] _levelEffect;
 
     [SerializeField] private Sprite _image;
 
@@ -27,7 +28,7 @@ public class Item : MonoBehaviour
         set
         {
             _level = value;
-            _guiData.Level.text = $"Current level: {_level}";
+            _guiData.Level.text = $"Level: {_level}";
         }
     }
 
@@ -60,24 +61,32 @@ public class Item : MonoBehaviour
         set => _num = value;
     }
 
+    public string[] LevelEffect
+    {
+        get => _levelEffect;
+        set => _levelEffect = value;
+    }
+
     public void TransferInfo()
     {
         _guiData.Name.text = _name;
         _guiData.Description.text = _description;
         _guiData.Image.sprite = _image;
-        _guiData.Level.text = $"Current level: {_level}";
+        _guiData.Level.text = $"Level: {_level}";
 
         _itemData.Item = this;
 
-        if (_level < LevelCost[LevelCost.Length - 1])
+        if (_level <= LevelCost.Length)
         {
             _guiData.Buy.text = "Buy";
             _guiData.Cost.text = $"Cost: {_cost}";
+            _guiData.Effect.text = $"Effect: {_levelEffect[_level - 1]}";
         }
         else
         {
             _guiData.Buy.text = "Sold out";
             _guiData.Cost.text = $"Cost: -";
+            _guiData.Effect.text = $"Effect: -";
         }
     }
     private void Awake()

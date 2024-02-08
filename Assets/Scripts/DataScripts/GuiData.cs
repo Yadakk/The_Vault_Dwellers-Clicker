@@ -21,7 +21,10 @@ public class GuiData : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _cost;
     [SerializeField] private TextMeshProUGUI _level;
     [SerializeField] private TextMeshProUGUI _power;
+    [SerializeField] private TextMeshProUGUI _passive;
+    [SerializeField] private TextMeshProUGUI _passiveCd;
     [SerializeField] private TextMeshProUGUI _buy;
+    [SerializeField] private TextMeshProUGUI _effect;
 
     public TextMeshProUGUI Resources 
     { 
@@ -89,9 +92,27 @@ public class GuiData : MonoBehaviour
         set => _power = value;
     }
 
+    public TextMeshProUGUI Passive
+    {
+        get => _passive;
+        set => _passive = value;
+    }
+
+    public TextMeshProUGUI PassiveCd
+    {
+        get => _passiveCd;
+        set => _passiveCd = value;
+    }
+
     public TextMeshProUGUI Buy
     {
         get => _buy;
         set => _buy = value;
+    }
+
+    public TextMeshProUGUI Effect
+    {
+        get => _effect;
+        set => _effect = value;
     }
 }
