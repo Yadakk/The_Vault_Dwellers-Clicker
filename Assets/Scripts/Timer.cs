@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
@@ -41,6 +42,11 @@ public class Timer : MonoBehaviour
             _audioSource.PlayOneShot(_audioSource.clip);
 
             _timeRemaining = _monthDuration;
+
+            if (_timeData.Year == 5)
+            {
+                SceneManager.LoadScene("GameOverScreen");
+            }
         }
     }
 }
