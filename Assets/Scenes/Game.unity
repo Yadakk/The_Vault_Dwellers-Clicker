@@ -4291,8 +4291,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -750, y: 28.840027}
-  m_SizeDelta: {x: -1500, y: 58}
+  m_AnchoredPosition: {x: -715, y: 55}
+  m_SizeDelta: {x: -1430, y: 110}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &869366866
 MonoBehaviour:
@@ -4989,8 +4989,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 750.0001, y: 28.840027}
-  m_SizeDelta: {x: -1500, y: 58}
+  m_AnchoredPosition: {x: 750.0001, y: 55}
+  m_SizeDelta: {x: -1500, y: 110}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &991301498
 MonoBehaviour:
@@ -5564,7 +5564,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 29}
+  m_AnchoredPosition: {x: 0, y: 55}
   m_SizeDelta: {x: 0, y: 58}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1185670350
@@ -6464,7 +6464,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 29}
+  m_AnchoredPosition: {x: 0, y: 55}
   m_SizeDelta: {x: 0, y: 58}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1346043383
@@ -7637,8 +7637,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 29}
-  m_SizeDelta: {x: -1500, y: 58}
+  m_AnchoredPosition: {x: 0, y: 55}
+  m_SizeDelta: {x: -1500, y: 110}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1614690905
 MonoBehaviour:
@@ -8497,7 +8497,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 29}
+  m_AnchoredPosition: {x: 0, y: 55}
   m_SizeDelta: {x: 0, y: 58}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1743268128
@@ -9173,7 +9173,6 @@ MonoBehaviour:
   _resourceData: {fileID: 1774015008}
   _clickerData: {fileID: 1774015010}
   _sfx: {fileID: 1000847858}
-  _window: {fileID: 610502915}
 --- !u!1 &1792359833
 GameObject:
   m_ObjectHideFlags: 0
