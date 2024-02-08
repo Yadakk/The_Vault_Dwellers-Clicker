@@ -19,6 +19,8 @@ public class GuiData : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _description;
     [SerializeField] private Image _image;
     [SerializeField] private TextMeshProUGUI _cost;
+    [SerializeField] private TextMeshProUGUI _level;
+
     public TextMeshProUGUI Resources 
     { 
         get => _resources; 
@@ -71,5 +73,11 @@ public class GuiData : MonoBehaviour
     {
         get => _cost;
         set => _cost = value;
+    }
+
+    public TextMeshProUGUI Level
+    {
+        get => _level;
+        set => _level = value;
     }
 }
