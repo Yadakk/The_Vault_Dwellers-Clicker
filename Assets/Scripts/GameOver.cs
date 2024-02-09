@@ -2,31 +2,26 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
 {
     [SerializeField] private AudioSource _audioSource;
     [SerializeField] private AudioClip _gameOver;
 
-    public AudioSource AudioSource
-    {
-        get => _audioSource;
-        set => _audioSource = value;
-    }
-    public AudioClip GameOverClip
-    {
-        get => _gameOver;
-        set => _gameOver = value;
-    }
-    void Start()
+    void Awake()
     {
         _audioSource.PlayOneShot(_gameOver);
     }
 
-    
-    public void doQuitGame()
+    public void QuitGame()
     {
         Application.Quit();
-        Debug.Log("quit game");
+    }
+
+    public void MainMenu()
+    {
+        Application.Quit();
+        SceneManager.LoadScene("Menu");
     }
 }

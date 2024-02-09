@@ -9,6 +9,7 @@ public class ClickerData : MonoBehaviour
     private int _passiveCooldown = 4;
 
     [SerializeField] private GuiData _guiData;
+    [SerializeField] PassiveCd _passiveCd;
 
     public int ClickPower
     {
@@ -37,6 +38,12 @@ public class ClickerData : MonoBehaviour
         {
             _passiveCooldown = value;
             _guiData.PassiveCd.text = $"Passive cooldown: {_passiveCooldown}";
+            _passiveCd.ReInvoke();
         }
+    }
+
+    private void Start()
+    {
+        ClickPower += SaveData.Stars;
     }
 }
