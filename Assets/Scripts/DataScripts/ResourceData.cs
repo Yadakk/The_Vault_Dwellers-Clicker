@@ -17,7 +17,7 @@ public class ResourceData : MonoBehaviour
         set
         {
             _resources = value;
-            _guiData.Resources.text = $"Resources: {_resources}";
+            _guiData.Resources.text = $"           {_resources}";
         }
     }
 
@@ -27,7 +27,7 @@ public class ResourceData : MonoBehaviour
         set
         {
             _essentials = value;
-            _guiData.Essentials.text = $"Essentials: {_essentials}";
+            _guiData.Essentials.text = $"           {_essentials}";
         }
     }
 
@@ -37,7 +37,7 @@ public class ResourceData : MonoBehaviour
         set
         {
             _people = value;
-            _guiData.People.text = $"People: {_people}";
+            _guiData.People.text = $"           {_people}";
         }
     }
 }

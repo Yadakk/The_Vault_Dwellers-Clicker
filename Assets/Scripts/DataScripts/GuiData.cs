@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEditor;
-using UnityEditor.Search;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GuiData : MonoBehaviour
 {
@@ -13,6 +13,18 @@ public class GuiData : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI _year;
     [SerializeField] private TextMeshProUGUI _month;
+
+    [SerializeField] private TextMeshProUGUI _name;
+    [SerializeField] private TextMeshProUGUI _description;
+    [SerializeField] private Image _image;
+    [SerializeField] private TextMeshProUGUI _cost;
+    [SerializeField] private TextMeshProUGUI _level;
+    [SerializeField] private TextMeshProUGUI _power;
+    [SerializeField] private TextMeshProUGUI _passive;
+    [SerializeField] private TextMeshProUGUI _passiveCd;
+    [SerializeField] private TextMeshProUGUI _buy;
+    [SerializeField] private TextMeshProUGUI _effect;
+
     public TextMeshProUGUI Resources 
     { 
         get => _resources; 
@@ -41,5 +53,65 @@ public class GuiData : MonoBehaviour
     {
         get => _month;
         set => _month = value;
+    }
+
+    public TextMeshProUGUI Name
+    {
+        get => _name;
+        set => _name = value;
+    }
+
+    public TextMeshProUGUI Description
+    {
+        get => _description;
+        set => _description = value;
+    }
+
+    public Image Image
+    {
+        get => _image;
+        set => _image = value;
+    }
+
+    public TextMeshProUGUI Cost
+    {
+        get => _cost;
+        set => _cost = value;
+    }
+
+    public TextMeshProUGUI Level
+    {
+        get => _level;
+        set => _level = value;
+    }
+
+    public TextMeshProUGUI Power
+    {
+        get => _power;
+        set => _power = value;
+    }
+
+    public TextMeshProUGUI Passive
+    {
+        get => _passive;
+        set => _passive = value;
+    }
+
+    public TextMeshProUGUI PassiveCd
+    {
+        get => _passiveCd;
+        set => _passiveCd = value;
+    }
+
+    public TextMeshProUGUI Buy
+    {
+        get => _buy;
+        set => _buy = value;
+    }
+
+    public TextMeshProUGUI Effect
+    {
+        get => _effect;
+        set => _effect = value;
     }
 }
