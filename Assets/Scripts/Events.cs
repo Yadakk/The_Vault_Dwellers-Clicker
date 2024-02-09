@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEditor.PackageManager.UI;
+using UnityEditor;
 
 public class Events : MonoBehaviour
 {
@@ -28,9 +28,9 @@ public class Events : MonoBehaviour
     {
         _eventList = new List<Event>
         {
-            new Event("Boredom", "People in your bunker are complaining about the lack of entertaiment options and want you to make a cinema hall", "Listen", "", "-100 Valuable Resource, +20 People", "-20 People"),
-            new Event("Attack on Bunkers", "Your bunker has been a subject to attacks from irradiated monsters. Your people are begging you to set up defences", "Set up defences", "Ignore", "-200 Valuable Resource, -15 Essential Resource, +50 People", "+20 Essential Resource, -75 People"),
-            new Event("Fridge is empty", "Your bunker has been low on essential resources for a while and your people have been starving", "Send people", "Ignore", "+25 Essential Resources", "-50 People"),
+            new Event("Boredom", "People in your bunker are complaining about the lack of entertaiment options and want you to make a cinema hall", "Listen", "Ignore", "-100 Valuable Resource, +20 People", "-20 People"),
+            new Event("Attack on Bunkers", "Your bunker has been a subject to attacks from irradiated monsters. Your people are begging you to set up defences", "Listen", "Ignore", "-200 Valuable Resource, -15 Essential Resource, +50 People", "+20 Essential Resource, -75 People"),
+            new Event("Fridge is empty", "Your bunker has been low on essential resources for a while and your people have been starving", "Listen", "Ignore", "+25 Essential Resources", "-50 People"),
         };
 
         _randomSeconds = Random.Range(_minSeconds, _maxSeconds);
