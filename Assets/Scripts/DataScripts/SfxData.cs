@@ -14,6 +14,9 @@ public class SfxData : MonoBehaviour
     [SerializeField] private AudioClip _guiOpen;
     [SerializeField] private AudioClip _guiClose;
 
+    [SerializeField] private AudioClip _karmaUp;
+    [SerializeField] private AudioClip _karmaDown;
+
     [SerializeField] private AudioSource _audioSource;
 
     public AudioClip[] ButtonClips
@@ -55,6 +58,16 @@ public class SfxData : MonoBehaviour
     {
         get => _guiClose;
         set => _guiClose = value;
+    }
+    public AudioClip KarmaUp
+    {
+        get => _karmaUp;
+        set => _karmaUp = value;
+    }
+    public AudioClip KarmaDown
+    {
+        get => _karmaDown;
+        set => _karmaDown = value;
     }
 
     public AudioClip GetButtonClips()

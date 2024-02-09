@@ -14,4 +14,11 @@ public class GuiSfx : MonoBehaviour
         else
             _sfxData.AudioSource.PlayOneShot(_sfxData.GuiClose);
     }
+    public void OnButtonClickForEvents()
+    {
+        if (_open)
+            _sfxData.AudioSource.PlayOneShot(_sfxData.KarmaUp);
+        else
+            _sfxData.AudioSource.PlayOneShot(_sfxData.KarmaDown);
+    }
 }

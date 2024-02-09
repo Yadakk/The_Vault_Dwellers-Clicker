@@ -28,9 +28,9 @@ public class Events : MonoBehaviour
     {
         _eventList = new List<Event>
         {
-            new Event("ExampleName1", "ExampleDescription1", "ExampleOptionA1", "ExampleOptionB1", "ExampleEffectsA1", "ExampleEffectsB1"),
-            new Event("ExampleName2", "ExampleDescription2", "ExampleOptionA2", "ExampleOptionB2", "ExampleEffectsA2", "ExampleEffectsB2"),
-            new Event("ExampleName3", "ExampleDescription3", "ExampleOptionA3", "ExampleOptionB3", "ExampleEffectsA3", "ExampleEffectsB3"),
+            new Event("Boredom", "People in your bunker are complaining about the lack of entertaiment options and want you to make a cinema hall", "Listen", "", "-100 Valuable Resource, +20 People", "-20 People"),
+            new Event("Attack on Bunkers", "Your bunker has been a subject to attacks from irradiated monsters. Your people are begging you to set up defences", "Set up defences", "Ignore", "-200 Valuable Resource, -15 Essential Resource, +50 People", "+20 Essential Resource, -75 People"),
+            new Event("Fridge is empty", "Your bunker has been low on essential resources for a while and your people have been starving", "Send people", "Ignore", "+25 Essential Resources", "-50 People"),
         };
 
         _randomSeconds = Random.Range(_minSeconds, _maxSeconds);
