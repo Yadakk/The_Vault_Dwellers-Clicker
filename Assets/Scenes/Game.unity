@@ -926,7 +926,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &151739038
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10765,6 +10765,7 @@ MonoBehaviour:
   _windowClicker: {fileID: 1631493713}
   _windowEvent: {fileID: 151739037}
   _guiSfx: {fileID: 348209124}
+  _guiData: {fileID: 1774015006}
 --- !u!1 &1743268126
 GameObject:
   m_ObjectHideFlags: 0
@@ -11281,6 +11282,12 @@ MonoBehaviour:
   _passiveCd: {fileID: 591524558}
   _buy: {fileID: 1309317999}
   _effect: {fileID: 1286676837}
+  _eventName: {fileID: 881525863}
+  _eventDescription: {fileID: 1583180527}
+  _eventOption1: {fileID: 1992959898}
+  _eventOption2: {fileID: 298542779}
+  _eventEffect1: {fileID: 647929847}
+  _eventEffect2: {fileID: 413893325}
 --- !u!4 &1774015007
 Transform:
   m_ObjectHideFlags: 0
