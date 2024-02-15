@@ -35,9 +35,16 @@ public class Timer : MonoBehaviour
 
         if (_timeData.Year == 5)
         {
-            SaveData.Stars += 1;
-            SaveData.Save();
-            SceneManager.LoadScene("GameOverScreen");
+            EndingType.EndingTypeProperty = 0;
+            ThrowGameOver();
         }
+    }
+
+    public void ThrowGameOver()
+    {
+        if (EndingType.EndingTypeProperty == 0)
+            SaveData.Stars += 1;
+        SaveData.Save();
+        SceneManager.LoadScene("GameOverScreen");
     }
 }

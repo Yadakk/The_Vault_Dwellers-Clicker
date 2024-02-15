@@ -17,6 +17,8 @@ public class Events : MonoBehaviour
     [SerializeField] private GuiSfx _guiSfx;
 
     [SerializeField] private GuiData _guiData;
+    [SerializeField] private ResourceData _resourceData;
+    [SerializeField] private TimeData _timeData;
 
     private bool _hasEvent;
 
@@ -28,9 +30,9 @@ public class Events : MonoBehaviour
     {
         _eventList = new List<Event>
         {
-            new Event("Boredom", "People in your bunker are complaining about the lack of entertaiment options and want you to make a cinema hall", "Listen", "Ignore", "-100 Valuable Resource, +20 People", "-20 People"),
-            new Event("Attack on Bunkers", "Your bunker has been a subject to attacks from irradiated monsters. Your people are begging you to set up defences", "Listen", "Ignore", "-200 Valuable Resource, -15 Essential Resource, +50 People", "+20 Essential Resource, -75 People"),
-            new Event("Fridge is empty", "Your bunker has been low on essential resources for a while and your people have been starving", "Listen", "Ignore", "+25 Essential Resources", "-50 People"),
+            new Event("Boredom", "People in your bunker are complaining about the lack of entertaiment options and want you to make a cinema hall", "Listen", "Ignore", "-100 Caps, +20 People", "-20 People"),
+            new Event("Attack on Bunkers", "Your bunker has been a subject to attacks from irradiated monsters. Your people are begging you to set up defences", "Listen", "Ignore", "-200 Caps, -15 Breads, +50 People", "+20 Breads, -75 People"),
+            new Event("Fridge is empty", "Your bunker has been low on essential resources for a while and your people have been starving", "Listen", "Ignore", "+25 Breads", "-50 People"),
         };
 
         _randomSeconds = Random.Range(_minSeconds, _maxSeconds);
@@ -66,6 +68,46 @@ public class Events : MonoBehaviour
             _hasEvent = false;
             _windowClicker.SetActive(false);
             _windowEvent.SetActive(true);
+        }
+    }
+
+    public void Option1()
+    {
+        switch (_randomEvent)
+        {
+            case 0:
+                _resourceData.Resources -= 100;
+                _resourceData.People += 20;
+                break;
+
+            case 1:
+                _resourceData.Resources -= 200;
+                _resourceData.Essentials -= 15;
+                _resourceData.People -= 50;
+                break;
+
+            case 2:
+                _resourceData.Essentials += 25;
+                break;
+        }
+    }
+
+    public void Option2()
+    {
+        switch (_randomEvent)
+        {
+            case 0:
+                _resourceData.People -= 20;
+                break;
+
+            case 1:
+                _resourceData.Essentials += 20;
+                _resourceData.People -= 75;
+                break;
+
+            case 2:
+                _resourceData.People -= 50;
+                break;
         }
     }
 

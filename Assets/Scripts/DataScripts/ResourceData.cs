@@ -7,17 +7,29 @@ public class ResourceData : MonoBehaviour
 {
     [SerializeField] private int _resources;
     [SerializeField] private int _essentials;
-    [SerializeField] private int _people;
 
     [SerializeField] private GuiData _guiData;
+
+    [SerializeField] private Timer _timer;
+
+    private int _people;
 
     public int Resources
     {
         get => _resources;
         set
         {
-            _resources = value;
-            _guiData.Resources.text = $"           {_resources}";
+            if (value >= 0)
+            {
+                _resources = value;
+                _guiData.Resources.text = $"           {_resources}";
+            }
+            else
+            {
+                _resources = 0;
+                _guiData.Resources.text = $"           {_resources}";
+
+            }
         }
     }
 
@@ -26,8 +38,22 @@ public class ResourceData : MonoBehaviour
         get => _essentials;
         set
         {
-            _essentials = value;
-            _guiData.Essentials.text = $"           {_essentials}";
+            if (value >= 0 || value <= 100)
+            {
+                _essentials = value;
+                _guiData.Essentials.text = $"           {_essentials}%";
+            }
+            else if (value < 0)
+            {
+                _essentials = 0;
+                _guiData.Essentials.text = $"           {_essentials}%";
+
+            }
+            else
+            {
+                _essentials = 100;
+                _guiData.Essentials.text = $"           {_essentials}%";
+            }
         }
     }
 
@@ -36,8 +62,24 @@ public class ResourceData : MonoBehaviour
         get => _people;
         set
         {
-            _people = value;
-            _guiData.People.text = $"           {_people}";
+            if (value >= 0)
+            {
+                _people = value;
+                _guiData.People.text = $"           {_people}";
+            }
+            else
+            {
+                _people = 0;
+                _guiData.People.text = $"           {_people}";
+
+                EndingType.EndingTypeProperty = 1;
+                _timer.ThrowGameOver();
+            }
         }
+    }
+
+    private void Awake()
+    {
+        People = Random.Range(10, 26);
     }
 }

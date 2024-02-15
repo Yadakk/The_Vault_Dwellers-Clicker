@@ -3324,6 +3324,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1729918162}
+        m_TargetAssemblyTypeName: Events, Assembly-CSharp
+        m_MethodName: Option2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &620328392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6000,6 +6012,18 @@ MonoBehaviour:
       - m_Target: {fileID: 870660265}
         m_TargetAssemblyTypeName: GuiSfx, Assembly-CSharp
         m_MethodName: OnButtonClickForEvents
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1729918162}
+        m_TargetAssemblyTypeName: Events, Assembly-CSharp
+        m_MethodName: Option1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12085,7 +12109,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\t 0"
+  m_text: "\t 50%"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -12252,7 +12276,7 @@ GameObject:
   - component: {fileID: 1729918159}
   - component: {fileID: 1729918162}
   m_Layer: 0
-  m_Name: EternalScripts
+  m_Name: SceneScripts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12322,6 +12346,8 @@ MonoBehaviour:
   _windowEvent: {fileID: 151739037}
   _guiSfx: {fileID: 348209124}
   _guiData: {fileID: 1774015006}
+  _resourceData: {fileID: 1774015008}
+  _timeData: {fileID: 1774015009}
 --- !u!1 &1743268126
 GameObject:
   m_ObjectHideFlags: 0
@@ -13008,9 +13034,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _resources: 0
-  _essentials: 0
-  _people: 0
+  _essentials: 50
   _guiData: {fileID: 1774015006}
+  _timer: {fileID: 1729918160}
 --- !u!114 &1774015009
 MonoBehaviour:
   m_ObjectHideFlags: 0
