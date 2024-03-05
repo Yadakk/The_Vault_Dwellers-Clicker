@@ -6,7 +6,8 @@ public class ClickerData : MonoBehaviour
 {
     private int _clickPower = 1;
     private int _passiveIncome = 0;
-    private int _passiveCooldown = 4;
+    private int _passiveCooldown = 1;
+    private int _criticalChance = 0;
 
     [SerializeField] private GuiData _guiData;
     [SerializeField] PassiveCd _passiveCd;
@@ -37,8 +38,17 @@ public class ClickerData : MonoBehaviour
         set
         {
             _passiveCooldown = value;
-            _guiData.PassiveCd.text = $"Passive cooldown: {_passiveCooldown}";
             _passiveCd.ReInvoke();
+        }
+    }
+
+    public int CriticalChance
+    {
+        get => _criticalChance;
+        set
+        {
+            _criticalChance = value;
+            _guiData.CriticalCh.text = $"Critical Chance: {_criticalChance}";
         }
     }
 

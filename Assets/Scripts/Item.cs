@@ -9,8 +9,8 @@ public class Item : MonoBehaviour
     [SerializeField] private string _name;
     [SerializeField] private string _description;
     [SerializeField] private int _id;
-    [SerializeField] private int[] _levelCost;
-    [SerializeField] private string[] _levelEffect;
+    [SerializeField] private int _levelCost;
+    [SerializeField] private string _levelEffect;
 
     [SerializeField] private Sprite _image;
 
@@ -49,7 +49,7 @@ public class Item : MonoBehaviour
         set => _id = value;
     }
 
-    public int[] LevelCost
+    public int LevelCost
     {
         get => _levelCost;
         set => _levelCost = value;
@@ -61,7 +61,7 @@ public class Item : MonoBehaviour
         set => _num = value;
     }
 
-    public string[] LevelEffect
+    public string LevelEffect
     {
         get => _levelEffect;
         set => _levelEffect = value;
@@ -75,24 +75,14 @@ public class Item : MonoBehaviour
         _guiData.Level.text = $"Level: {_level}";
 
         _itemData.Item = this;
-
-        if (_level <= LevelCost.Length)
-        {
-            _guiData.Buy.text = "Buy";
-            _guiData.Cost.text = $"Cost: {_cost}";
-            _guiData.Effect.text = $"Effect: {_levelEffect[_level - 1]}";
-        }
-        else
-        {
-            _guiData.Buy.text = "Sold out";
-            _guiData.Cost.text = $"Cost: -";
-            _guiData.Effect.text = $"Effect: -";
-        }
+        _guiData.Buy.text = "Buy";
+        _guiData.Cost.text = $"Cost: {_cost}";
+        _guiData.Effect.text = $"Effect: {_levelEffect}";
     }
     private void Awake()
     {
         _level = 1;
-        _cost = _levelCost[0];
+        _cost = _levelCost;
 
         _num.text = _cost.ToString();
     }

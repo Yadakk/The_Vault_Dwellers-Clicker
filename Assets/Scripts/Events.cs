@@ -83,7 +83,7 @@ public class Events : MonoBehaviour
             case 1:
                 _resourceData.Resources -= 200;
                 _resourceData.Essentials -= 15;
-                _resourceData.People -= 50;
+                _resourceData.People += 50;
                 break;
 
             case 2:

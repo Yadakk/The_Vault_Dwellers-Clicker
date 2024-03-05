@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
@@ -62,7 +63,7 @@ public class ResourceData : MonoBehaviour
         get => _people;
         set
         {
-            if (value >= 0)
+            if (value >= 0 && value <= Int32.MaxValue-1)
             {
                 _people = value;
                 _guiData.People.text = $"           {_people}";
@@ -80,6 +81,6 @@ public class ResourceData : MonoBehaviour
 
     private void Awake()
     {
-        People = Random.Range(10, 26);
+        People = UnityEngine.Random.Range(10, 26);
     }
 }

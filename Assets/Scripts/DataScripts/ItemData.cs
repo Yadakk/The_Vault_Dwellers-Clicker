@@ -22,7 +22,7 @@ public class ItemData : MonoBehaviour
 
     public void Purchase()
     {
-        if (_resourceData.Resources >= _item.Cost && _item.Level <= _item.LevelCost.Length)
+        if (_resourceData.Resources >= _item.Cost)
         {
             _resourceData.Resources -= _item.Cost;
             _sfx.OnButtonClick();
@@ -31,70 +31,28 @@ public class ItemData : MonoBehaviour
             {
                 case 1:
                     RetrievalDeviceUpgrade();
+                    _item.Cost *= 2;
                     break;
                 case 2:
                     AutomatedBotsforRetrieval();
+                    _item.Cost = (int)Mathf.Round(_item.Cost*1.5f);
                     break;
             }
-
-            if (_item.Level < _item.LevelCost.Length)
-            {
-                _item.Cost = _item.LevelCost[_item.Level];
-                _guiData.Effect.text = $"Effect: {_item.LevelEffect[_item.Level]}";
-            }
-            else
-            {
-                _guiData.Buy.text = "Sold out";
-                _guiData.Cost.text = $"Cost: -";
-                _item.Num.text = "-";
-                _guiData.Effect.text = $"Effect: -";
-            }
+            _guiData.Effect.text = $"Effect: {_item.LevelEffect[_item.Level]}";
             _item.Level += 1;
         }
     }
     private void RetrievalDeviceUpgrade()
     {
-        switch (_item.Level)
-        {
-            case 1:
-                _clickerData.ClickPower += 1;
-                break;
-
-            case 2:
-                _clickerData.ClickPower += 2;
-                break;
-
-            case 3:
-                _clickerData.ClickPower += 2;
-                break;
-
-            case 4:
-                _clickerData.ClickPower += 3;
-                break;
-
-            case 5:
-                _clickerData.ClickPower += 4;
-                break;
-        }
+        _clickerData.ClickPower += 1;
     }
 
     private void AutomatedBotsforRetrieval()
     {
-        switch (_item.Level)
-        {
-            case 1:
-                _clickerData.PassiveIncome += 1;
-                break;
-
-            case 2:
-                _clickerData.PassiveIncome += 1;
-                _clickerData.PassiveCooldown -= 1;
-                break;
-
-            case 3:
-                _clickerData.PassiveIncome += 2;
-                _clickerData.PassiveCooldown -= 2;
-                break;
-        }
+        _clickerData.PassiveIncome += 1;
+    }
+    private void LuckyCharm()
+    {
+        _clickerData.CriticalChance += 1;
     }
 }
