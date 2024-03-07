@@ -19,6 +19,7 @@ public class Events : MonoBehaviour
     [SerializeField] private GuiData _guiData;
     [SerializeField] private ResourceData _resourceData;
     [SerializeField] private TimeData _timeData;
+    [SerializeField] private ClickerData _clickerData;
 
     private bool _hasEvent;
 
@@ -90,6 +91,7 @@ public class Events : MonoBehaviour
                 _resourceData.Essentials += 25;
                 break;
         }
+        _resourceData.Resources += _clickerData.PositiveChoiceIncome;
     }
 
     public void Option2()
