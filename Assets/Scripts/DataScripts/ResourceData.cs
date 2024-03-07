@@ -3,9 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ResourceData : MonoBehaviour
 {
+    public readonly UnityEvent<int> ResourcesChanged = new UnityEvent<int>();
+    public readonly UnityEvent<int> EssentialsChanged = new UnityEvent<int>();
+    public readonly UnityEvent<int> PeopleChanged = new UnityEvent<int>();
+
     [SerializeField] private int _resources;
     [SerializeField] private int _essentials;
 
@@ -23,13 +28,12 @@ public class ResourceData : MonoBehaviour
             if (value >= 0)
             {
                 _resources = value;
-                _guiData.Resources.text = $"           {_resources}";
+                ResourcesChanged.Invoke(_resources);
             }
             else
             {
                 _resources = 0;
-                _guiData.Resources.text = $"           {_resources}";
-
+                ResourcesChanged.Invoke(_resources);
             }
         }
     }
@@ -42,18 +46,17 @@ public class ResourceData : MonoBehaviour
             if (value >= 0 || value <= 100)
             {
                 _essentials = value;
-                _guiData.Essentials.text = $"           {_essentials}%";
+                EssentialsChanged.Invoke(_essentials);
             }
             else if (value < 0)
             {
                 _essentials = 0;
-                _guiData.Essentials.text = $"           {_essentials}%";
-
+                EssentialsChanged.Invoke(_essentials);
             }
             else
             {
                 _essentials = 100;
-                _guiData.Essentials.text = $"           {_essentials}%";
+                EssentialsChanged.Invoke(_essentials);
             }
         }
     }
@@ -66,12 +69,12 @@ public class ResourceData : MonoBehaviour
             if (value >= 0 && value <= Int32.MaxValue-1)
             {
                 _people = value;
-                _guiData.People.text = $"           {_people}";
+                PeopleChanged.Invoke(_people);
             }
             else
             {
                 _people = 0;
-                _guiData.People.text = $"           {_people}";
+                PeopleChanged.Invoke(_people);
 
                 EndingType.EndingTypeProperty = 1;
                 _timer.ThrowGameOver();
