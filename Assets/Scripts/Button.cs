@@ -14,7 +14,7 @@ public class Button : MonoBehaviour
     public void OnButtonClick()
     {
         _forRnd = Random.Range(1, 100);
-        if (_clickerData.CriticalChance <= _forRnd)
+        if (_forRnd <= _clickerData.CriticalChance)
         {
             _resourceData.Resources += (_clickerData.ClickPower*2);
         }

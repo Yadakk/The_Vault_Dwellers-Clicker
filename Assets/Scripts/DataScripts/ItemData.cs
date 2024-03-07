@@ -37,6 +37,14 @@ public class ItemData : MonoBehaviour
                     AutomatedBotsforRetrieval();
                     _item.Cost = (int)Mathf.Round(_item.Cost*1.5f);
                     break;
+                case 3:
+                    LuckyCharm();
+                    _item.Cost = (int)Mathf.Round(_item.Cost * 1.5f);
+                    break;
+                case 4:
+                    PositiveChoiceIncome();
+                    _item.Cost *= 2;
+                    break;
             }
             _guiData.Effect.text = $"Effect: {_item.LevelEffect[_item.Level]}";
             _item.Level += 1;
@@ -54,5 +62,9 @@ public class ItemData : MonoBehaviour
     private void LuckyCharm()
     {
         _clickerData.CriticalChance += 1;
+    }
+    private void PositiveChoiceIncome()
+    {
+        _clickerData.PositiveChoiceIncome += 10;
     }
 }

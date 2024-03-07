@@ -8,6 +8,7 @@ public class ClickerData : MonoBehaviour
     private int _passiveIncome = 0;
     private int _passiveCooldown = 1;
     private int _criticalChance = 0;
+    private int _positiveChoiceIncome = 0;
 
     [SerializeField] private GuiData _guiData;
     [SerializeField] PassiveCd _passiveCd;
@@ -49,6 +50,16 @@ public class ClickerData : MonoBehaviour
         {
             _criticalChance = value;
             _guiData.CriticalCh.text = $"Critical Chance: {_criticalChance}";
+        }
+    }
+
+    public int PositiveChoiceIncome
+    {
+        get => _positiveChoiceIncome;
+        set
+        {
+            _positiveChoiceIncome = value;
+            _guiData.PositiveCh.text = $"Positive Choice Income: {_positiveChoiceIncome}";
         }
     }
 

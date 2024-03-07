@@ -22,6 +22,7 @@ public class GuiData : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _power;
     [SerializeField] private TextMeshProUGUI _passive;
     [SerializeField] private TextMeshProUGUI _critCh;
+    [SerializeField] private TextMeshProUGUI _posCh;
     [SerializeField] private TextMeshProUGUI _buy;
     [SerializeField] private TextMeshProUGUI _effect;
 
@@ -108,6 +109,11 @@ public class GuiData : MonoBehaviour
     {
         get => _critCh;
         set => _critCh = value;
+    }
+    public TextMeshProUGUI PositiveCh
+    {
+        get => _posCh;
+        set => _posCh = value;
     }
 
     public TextMeshProUGUI Buy
