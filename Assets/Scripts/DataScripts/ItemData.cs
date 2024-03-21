@@ -45,26 +45,46 @@ public class ItemData : MonoBehaviour
                     PositiveChoiceIncome();
                     _item.Cost *= 2;
                     break;
+                case 5:
+                    MysteriousStranger();
+                    _item.Cost = (int)Mathf.Round(_item.Cost * 1.5f);
+                    break;
+                case 6:
+                    EssentialsUpgrade();
+                    _item.Cost *= 2;
+                    break;
             }
-            _guiData.Effect.text = $"Effect: {_item.LevelEffect[_item.Level]}";
-            _item.Level += 1;
+            _guiData.Effect.text = $"Effect: {_item.LevelEffect}";
+            _item.Level++;
         }
     }
     private void RetrievalDeviceUpgrade()
     {
-        _clickerData.ClickPower += 1;
+        _clickerData.ClickPower++;
     }
 
     private void AutomatedBotsforRetrieval()
     {
-        _clickerData.PassiveIncome += 1;
+        _clickerData.PassiveIncome++;
     }
     private void LuckyCharm()
     {
-        _clickerData.CriticalChance += 1;
+        _clickerData.CriticalChance++;
     }
     private void PositiveChoiceIncome()
     {
         _clickerData.PositiveChoiceIncome += 10;
+    }
+    private void MysteriousStranger()
+    {
+        _clickerData.StrangerChance++;
+    }
+    private void EssentialsUpgrade()
+    {
+        _resourceData.MaxEssentials++;
+    }
+    private void TipJar()
+    {
+        _clickerData.Tip++;
     }
 }
