@@ -8,7 +8,6 @@ public class ResourceData : MonoBehaviour
 {
     [SerializeField] private int _resources;
     [SerializeField] private int _essentials;
-    private int _maxEssentials = 100;
 
     [SerializeField] private GuiData _guiData;
 
@@ -40,7 +39,7 @@ public class ResourceData : MonoBehaviour
         get => _essentials;
         set
         {
-            if (value >= 0 || value <= _maxEssentials)
+            if (value >= 0 || value <= 100)
             {
                 _essentials = value;
                 _guiData.Essentials.text = $"           {_essentials}%";
@@ -53,7 +52,7 @@ public class ResourceData : MonoBehaviour
             }
             else
             {
-                _essentials = _maxEssentials;
+                _essentials = 100;
                 _guiData.Essentials.text = $"           {_essentials}%";
             }
         }
@@ -78,11 +77,6 @@ public class ResourceData : MonoBehaviour
                 _timer.ThrowGameOver();
             }
         }
-    }
-    public int MaxEssentials
-    {
-        get => _maxEssentials;
-        set => _maxEssentials = value;
     }
 
     private void Awake()
